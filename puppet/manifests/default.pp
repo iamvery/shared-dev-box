@@ -24,6 +24,12 @@ class install_core_packages {
       ensure => installed
     }
   }
+
+  if !defined(Package['tmux']) {
+    package { 'tmux':
+      ensure => installed
+    }
+  }
 }
 class { 'install_core_packages': }
 
